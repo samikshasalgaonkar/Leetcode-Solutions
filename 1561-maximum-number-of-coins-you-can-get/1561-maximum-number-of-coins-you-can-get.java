@@ -1,15 +1,10 @@
 class Solution {
     public int maxCoins(int[] piles) {
-        ArrayList<Integer> coinList = new ArrayList<>();
-        for(int i : piles) {
-            coinList.add(i);
-        }
-        
-        Collections.sort(coinList);
+        Arrays.sort(piles);
         int sum = 0;
-        int k = coinList.size() / 3;
-        for(int i = coinList.size() - 2; i >= k; i-=2) {
-            sum = sum + coinList.get(i);
+        int k = piles.length / 3;
+        for(int i = piles.length - 2; i >= k; i-=2) {
+            sum = sum + piles[i];
         }
         
         return sum;
